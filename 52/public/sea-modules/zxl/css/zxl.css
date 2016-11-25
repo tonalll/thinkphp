@@ -1,0 +1,407 @@
+.example-layout textarea {
+    width: 100%;
+    background: #eee;
+    border: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+#desk textarea {
+    width: 100%;
+    background: #eee;
+    border: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+
+/*
+主色调 #00BEEE
+滑过 #00CCFF
+按下 #00A4CC
+*/
+
+html,
+body {
+    font-family: "宋体", "Arial Narrow";
+    font-size: 12px;
+    height: 100%;
+    overflow: hidden;
+}
+
+#head {
+    height: 60px;
+    background: #aaa;
+}
+
+#start {
+    width: 60px;
+    position: relative;
+}
+
+#start .logo {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    background: url(../img/zxl.png) center center no-repeat;
+}
+
+#start .x-menu {
+    display: none;
+    width: 600px;
+    position: absolute;
+    z-index: 9;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    color: #fff;
+}
+
+#start .x-layout {
+    margin: 10px 0;
+}
+
+#start .x-menu .x-title {
+    border-bottom: 1px dashed #fff;
+    padding: 3px 0;
+    font-weight: bold;
+    line-height: normal;
+}
+
+#start .x-menu .x-unit {
+    cursor: pointer;
+    margin-top: 5px;
+    padding-left: 10px;
+}
+
+#start .x-menu .x-unit:hover {
+    background-color: #f50;
+}
+
+#start .x-menu .x-ico {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+}
+
+#start .x-ico-default {
+    background: url(../img/default.png) center center no-repeat;
+}
+
+#start .x-menu .x-name {
+    height: 30px;
+    line-height: 30px;
+}
+
+.x-cio-default {
+    background-color: #000;
+}
+
+#head .l-col {
+    line-height: 60px;
+    height: 60px;
+}
+
+.taskBar-min #taskBar .x-name {
+    display: none;
+}
+
+.taskBar-min #taskBar {
+    width: 30px;
+}
+
+#taskBar {
+    background: #ddd;
+    float: left;
+    width: 150px;
+    position: relative;
+}
+
+#toogle-TaskBar {
+    height: 20px;
+    width: 100%;
+    background: #555;
+    cursor: pointer;
+}
+
+#taskBar .x-unit {
+    cursor: pointer;
+}
+
+#taskBar .x-unit-sleep {
+    background: #fff;
+}
+
+#taskBar .x-unit-open {
+    background: #00BEEE;
+}
+
+#taskBar .x-unit-open .x-name {
+    color: #fff;
+}
+
+#taskBar .name-magic {
+    padding: 0 5px;
+    position: absolute;
+    display: none;
+    line-height: 30px;
+    height: 30px;
+    background-color: #00BEEE;
+    color: #fff;
+    z-index: 9;
+}
+
+#taskBar .x-unit:hover {
+    background-color: #00BEEE;
+}
+
+#taskBar .x-ico {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+}
+
+#taskBar .x-ico-default {
+    background: url(../img/default.png) center center no-repeat;
+}
+
+#taskBar .x-name {
+    height: 30px;
+    line-height: 30px;
+}
+
+#unitContextMenu{width: auto !important;background: #fff;display: none;position: absolute;z-index: 9!important;border: 1px solid #005551;}
+#unitContextMenu ul li{cursor: pointer;padding: 5px 10px;}
+#unitContextMenu ul li:hover{cursor: pointer;background: #005551;color: #fff;}
+
+
+#room {
+    float: left;
+    background: #eee
+}
+
+#desk {
+    background: #fff;
+    overflow: auto;
+    height: 100%;
+}
+
+#room .window {
+    position: relative;
+    background: #fff;
+    overflow: auto;
+    height: 100%;
+    padding: 5px;
+}
+
+#room .window .layer {
+    overflow: auto;
+    height: 100%;
+}
+
+.layer-head {
+    border-bottom: 1px solid #ddd;
+}
+
+.layer-head h1 {
+    padding: 5px;
+    font-family: '微软亚黑';
+}
+
+.layer-back {
+    width: 30px;
+    height: 30px;
+    background: url(../img/goBack1.png) center center no-repeat;
+    display: inline-block;
+    cursor: pointer;
+}
+
+
+/*表格*/
+
+.m-grid {}
+
+.m-grid-head {}
+
+.m-grid-head table {
+    background: #fff;
+    color: #000;
+}
+
+.m-grid-head table th {
+    border-color: #ddd;
+}
+
+.m-gridBar {
+    margin: 0;
+    border: none;
+    background: #eee;
+    font-size: 0
+}
+
+.m-gridBar .m-button {
+    font-size: 12px;
+    margin-left: 0;
+}
+
+.m-pageBar {}
+
+.m-pageButton {
+    background-color: #999!important;
+}
+
+.m-pageButton:hover {
+    background-color: #00beee!important;
+}
+
+.m-pageBar .x-select {
+    background-color: #00beee!important;
+}
+
+
+/*弹窗提示信息*/
+
+.m-alert {
+    position: fixed;
+    _position: absolute;
+    width: 38%;
+    border: 2px solid #00beee;
+    z-index: 51;
+    top: 0;
+    left: 0;
+    background: #fff;
+}
+
+.m-alert-con {
+    padding: 20px 5px;
+    border-bottom: 1px solid #00beee;
+}
+
+.m-alert-close {
+    color: #00beee;
+    border: 1px solid #00beee;
+    background: #fff;
+    cursor: pointer;
+    padding: 5px 10px;
+    text-align: center;
+    margin: 10px;
+}
+
+.m-alert-close-hover {
+    background: #00beee;
+    color: #fff;
+}
+
+.m-confirm {
+    position: fixed;
+    _position: absolute;
+    width: 38%;
+    border: 2px solid #00beee;
+    z-index: 51;
+    top: 0;
+    left: 0;
+    background: #fff;
+}
+
+.m-confirm-con {
+    padding: 20px 5px;
+    border-bottom: 1px solid #00beee;
+}
+
+.m-confirm-close {
+    color: #00beee;
+    border: 1px solid #00beee;
+    background: #fff;
+    cursor: pointer;
+    padding: 5px 10px;
+    text-align: center;
+    margin: 10px;
+}
+
+.m-confirm-close-hover {
+    background: #00beee;
+    color: #fff;
+}
+
+.m-confirm-cancle {
+    right: 100px;
+    color: #999;
+    border: 1px solid #999;
+    background: #fff;
+    cursor: pointer;
+    padding: 5px 10px;
+    text-align: center;
+    margin: 10px;
+}
+
+.m-confirm-cancle-hover {
+    background: #999;
+    color: #fff;
+}
+
+#m-alert-mask {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 41;
+}
+
+.m-notice {
+    position: fixed;
+    _position: absolute;
+    width: 38%;
+    border: 2px solid #00beee;
+    z-index: 51;
+    top: 0;
+    left: 0;
+    background: #fff;
+}
+
+.m-notice-con {
+    padding: 20px 5px;
+}
+
+
+/*edit输入错误样式*/
+
+.editError {
+    border: 1px solid #f00!important;
+}
+
+/*日历*/
+#calendar{margin:0; width:208px; z-index:1001; position:absolute; display:block; border:1px solid #009d96; display:none;}
+#calendar *{margin:0; padding:0; font-size:12px; line-height:18px}
+#calendar .main{margin:auto; padding:2px; text-align:center; background:#ffffff; zoom:1; position:relative;}
+#calendar .head{background:#EDF8FF; border:1px solid #009d96;height: auto;padding: 3px 0px;}
+#calendar .head select{width:60px;}
+#calendar .body{margin:2px 0; padding:2px; clear:both; overflow:hidden; border:1px solid #009d96;position:relative;}
+#calendar .foot{background:#EDF8FF;  text-align:right;padding:1px}
+#calendar .nodate .head, #calendar .nodate .body{display:none;}
+#calendar dl{clear:both; margin:auto; overflow:hidden;}
+#calendar dt, #calendar dd, #calendar span{width:26px; height:18px; display:block; float:left; overflow:hidden;zoom:1; border:1px solid #fff;}
+#calendar dt{margin-top:4px;font-weight:bold;color:#666666;}
+#calendar .days dd{cursor:pointer;}
+#calendar .days dd.other{color:#009d96}
+#calendar .days dd.slt{ background:#009d96; border:1px solid #66CCCC;color: #fff;}
+#calendar .days dd:hover{ border:1px solid #66CCCC;}
+#calendar .close{width:16px;height:16px; font-size:16px; display:block;cursor:pointer;border:1px solid #009d96;text-align:center; }
+#calendar .clearBut, #calendar .okBut { background-color: #009d96;border: 1px solid #009d96;  color: #fff;cursor: pointer; margin-top: 2px; width: 40px; }
+#calendar .time{border-collapse:collapse;float:left;background-color:#fff;display:none;}
+#calendar .time td{border:1px solid #61CAD0; line-height:16px; vertical-align:center;}
+#calendar .time .hh, #calendar .time .mm, #calendar .time .ss{width:18px; height:16px; border: none}
+#calendar .time ul {list-style:none}
+#calendar .time .up, #calendar .time .down {font-size:8px;height:8px;line-height:100%;border:1px solid #009d96;cursor:pointer;}
+#calendar .tm {}
+#calendar .tm .hh, #calendar .tm .mm, #calendar .tm .ss{border:1px solid #A3C6C8;position:absolute;left:1px;bottom:1px;background-color:#ffffc0;width:120px;display:none;}
+#calendar .hh .hh, #calendar .mm .mm, #calendar .ss .ss{display:block;}
+#calendar .tm .hh li, #calendar .tm .mm li, #calendar .tm .ss li{display:block;float:left;cursor:pointer;width:20px;line-height:21px}
+#calendar .tm .hh li:hover, #calendar .tm .mm li:hover, #calendar .tm .ss li:hover{ background:#009d96;}
+#calendar .disabled{color: #f00!important;}
+
+.m-date{background: url(../img/m-date.png) center right no-repeat;}
+
+
+
+/*asdf*/

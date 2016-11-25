@@ -1,0 +1,182 @@
+<div class="frag">
+
+    <div role="notice">
+        <div class="m-notice">
+            <div class="m-notice-con"></div>
+        </div>
+    </div>
+    <div role="alert">
+        <div class="m-alert">
+            <div class="m-alert-con"></div>
+            <div class="l-row">
+                <div class="l-col-6">&nbsp;</div>
+                <div class="l-col-6">
+                    <div class="m-alert-close">确定</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div role="confirm">
+        <div class="m-confirm">
+            <div class="m-confirm-con"></div>
+            <div class="l-row">
+                <div class="l-col-6">
+                    <div class="m-confirm-cancle">取消</div>
+                </div>
+                <div class="l-col-6">
+                    <div class="m-confirm-close">确定</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div role="alert-mask">
+        <div id="m-alert-mask">
+        </div>
+    </div>
+
+
+    <div role="taskBarUnit">
+        <div class="l-row x-unit" window='url:"{url}",title:"{title}",id:"{id}",ico:"{ico}",autoRefresh:"{autoRefresh}"'>
+            <div class="l-col x-ico {ico}"></div>
+            <div class="l-col x-name">{title}</div>
+        </div>
+    </div>
+    <div role="pageBar">
+        <span class="m-text">每页显示</span>
+        <span class="pageLength">
+                                    
+                                <select class="m-select" name="" id="">
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
+                                    <option value="40">40</option>
+                                    <option value="50">50</option>
+                                    <option value="60">60</option>
+                                    <option value="70">70</option>
+                                    <option value="80">80</option>
+                                </select>
+                                </span>
+        <span class="m-text">条</span>
+        <span class="m-button m-pagePrev">上一页</span>
+        <span class="m-button m-pageNext">下一页</span>
+        <span class="pageInput">
+                                    <input class="m-pageGoInput" type="text" /><span class="m-button m-pageGo">跳转</span>
+        </span>
+        <span class="m-text">共{pageTotal}页</span><span class="m-text">共{dataTotal}条</span>
+    </div>
+
+
+    <div role="layer">
+        <div class='layer'>
+            <div class="layer-head l-row">
+                <div class="l-col-10 layer-title">
+                    <h1>{title}</h1></div>
+                <div class="l-col-2 l-align-right">
+                    <div class="layer-back"></div>
+                </div>
+            </div>
+            <div class="layer-body"></div>
+        </div>
+    </div>
+
+    <!-- 日期控件 -->
+    <div role="calendarFrag">
+        <div id="calendar">
+            <div class="main">
+                <div class="head">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="2">
+                        <tr>
+                            <td>
+                                <select name="year"></select>
+                            </td>
+                            <td>
+                                <select name="month"></select>
+                            </td>
+                            <td width="20"><span class="close">×</span></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="body">
+                    <dl class="dayNames"><dt>日</dt><dt>一</dt><dt>二</dt><dt>三</dt><dt>四</dt><dt>五</dt><dt>六</dt></dl>
+                    <dl class="days">日期列表选项</dl>
+                    <div style="clear:both;height:0;line-height:0"></div>
+
+                </div>
+
+                <div class="foot">
+                    <table class="time">
+                        <tr>
+                            <td>
+                                <input type="text" class="hh" maxlength="2" start="0" end="23" />:
+                                <input type="text" class="mm" maxlength="2" start="0" end="59" />:
+                                <input type="text" class="ss" maxlength="2" start="0" end="59" />
+                            </td>
+                            <td>
+                                <ul>
+                                    <li class="up">&and;</li>
+                                    <li class="down">&or;</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                    <button type="button" class="clearBut">清空</button>
+                    <button type="button" class="okBut">确定</button>
+                    <div>
+                        <div class="tm">
+                            <ul class="hh">
+                                <li>0</li>
+                                <li>1</li>
+                                <li>2</li>
+                                <li>3</li>
+                                <li>4</li>
+                                <li>5</li>
+                                <li>6</li>
+                                <li>7</li>
+                                <li>8</li>
+                                <li>9</li>
+                                <li>10</li>
+                                <li>11</li>
+                                <li>12</li>
+                                <li>13</li>
+                                <li>14</li>
+                                <li>15</li>
+                                <li>16</li>
+                                <li>17</li>
+                                <li>18</li>
+                                <li>19</li>
+                                <li>20</li>
+                                <li>21</li>
+                                <li>22</li>
+                                <li>23</li>
+                            </ul>
+                            <ul class="mm">
+                                <li>0</li>
+                                <li>5</li>
+                                <li>10</li>
+                                <li>15</li>
+                                <li>20</li>
+                                <li>25</li>
+                                <li>30</li>
+                                <li>35</li>
+                                <li>40</li>
+                                <li>45</li>
+                                <li>50</li>
+                                <li>55</li>
+                            </ul>
+                            <ul class="ss">
+                                <li>0</li>
+                                <li>10</li>
+                                <li>20</li>
+                                <li>30</li>
+                                <li>40</li>
+                                <li>50</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
