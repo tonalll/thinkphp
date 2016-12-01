@@ -3,6 +3,12 @@ define('zxl/room', function (require, exports, module) {
     var $ = require('jquery');
     var layer = require('layer');
     var room = {
+      close:function(_id){
+        room.window.remove(_id);
+        room.taskBar.close(_id);
+        var $sleep = $('#taskBar .x-layout .x-unit-sleep:last');
+        $sleep.click();
+      },
         window: {
             options: {
                 id: 'window' + Math.random().toString().replace('0.', ''),
@@ -110,7 +116,7 @@ define('zxl/room', function (require, exports, module) {
             },
         },
         taskBar: {
-            //            任务栏按钮缓存 
+            //            任务栏按钮缓存
             cache: {},
             init: function () {
                 $.ajax({
@@ -124,7 +130,7 @@ define('zxl/room', function (require, exports, module) {
                     seajs.use('ui', function (ui) {
                         ui();
                     });
-                    if (room.options.defaultPage) room.taskBar.cache[room.options.defaultPage].$unit.click();
+                    if (room.options.defaultPage&&room.taskBar.cache[room.options.defaultPage]) room.taskBar.cache[room.options.defaultPage].$unit.click();
                 });
             },
             getUnit: function (_id) {
@@ -155,7 +161,7 @@ define('zxl/room', function (require, exports, module) {
                                 left: e.pageX - 5
                             });
                             // console.info('右键');
-                            //                    菜单初始化 
+                            //                    菜单初始化
                             if ($this.hasClass('x-unit-open') || $this.hasClass('x-unit-sleep')) {
                                 $('#unit-close').show();
                                 $('#unit-refresh').show();

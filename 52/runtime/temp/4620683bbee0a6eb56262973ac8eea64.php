@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:57:"F:\wamp\www\tp\52/application/admin\view\index\index.html";i:1480058444;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:57:"F:\wamp\www\tp\52/application/admin\view\index\index.html";i:1480558784;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -296,8 +296,8 @@
             zxl.config({
                 frag: '__PUBLIC__sea-modules/zxl/frag.html',
                 swf: '__PUBLIC__sea-modules/zxl/Uploader.swf',
-                taskBar: '__PUBLIC__sea-modules/zxl/ajax/taskBar.json',
-                defaultPage: 'pageDiv',
+                taskBar: './menu/getMenu.html',
+                defaultPage: 'menu',
             });
             zxl.init();
         });

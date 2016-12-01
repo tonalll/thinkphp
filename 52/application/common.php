@@ -13,3 +13,8 @@
 function zty(){
     echo 'zty';
 }
+function zxlErr($msg='错误默认消息'){
+    header('HTTP/1.1 404 Not Found');
+    echo $msg;
+    exit;
+}

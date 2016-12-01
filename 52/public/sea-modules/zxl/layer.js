@@ -10,24 +10,24 @@ define('zxl/layer', function (require, exports, module) {
             title: '&nbsp', //
             url: '', //
             target: $('body'),
-            data: '',
-            //打开组件之前，返回false则不打开，返回true打开，传入对象，通常是点击打开的按钮
-            beforeAdd: function (_$Add) {
+            data: {},
+            //打开组件之前，返回false则不打开，返回true打开，传入对象，_optons层的配置参数，方便修改。_$Add点击打开的按钮
+            beforeAdd: function (_options,_$Add) {
                 // console.info('打开前');
                 return true;
             },
             //打开组件之后，传入对象，通常是点击打开的按钮
-            afterAdd: function (_$Add, _$back) {
+            afterAdd: function (_options,$Add, _$back) {
                 // console.info('打开后');
                 return true;
             },
             //点击返回按钮之前，返回false则不返回，返回true返回，传入返回按钮的jquery对象
-            beforeBack: function (_$open, _$back) {
+            beforeBack: function (_options,_$open, _$back) {
                 // console.info('返回前');
                 return true;
             },
             //点击返回按钮之后，传入返回按钮的jquery对象
-            afterBack: function (_$back) {
+            afterBack: function (_options,_$back) {
                 // console.info('返回后');
                 return true;
             },
@@ -36,7 +36,6 @@ define('zxl/layer', function (require, exports, module) {
         add: function (_options) {
             var options = $.extend({}, layer.options, _options);
             if (!options.id) options.id = 'default' + Math.random().toString().replace('0.', '');
-            if (!options.beforeAdd()) return;
             options.target.append(index.frag['layer'].replace('{title}', options.title));
             var $layer = options.target.find('>.layer:last');
             var layerTotal = options.target.find('>.layer').length;
@@ -101,10 +100,10 @@ define('zxl/layer', function (require, exports, module) {
                 $window.attr('layer-total', total);
             }
         },
-        addAndOpen: function (_options) {
+        addAndOpen: function (_options,_$this) {
             var options = $.extend({}, layer.options, _options);
             if (!options.id) options.id = 'default' + Math.random().toString().replace('0.', '');
-            if (!options.beforeAdd()) return;
+            if (!options.beforeAdd(options,_$this)) return;
             options.target.on(
                 'layerAdd.' + options.id, function (e, _id) {
                     //                    console.info('--layerAdd--');

@@ -76,7 +76,7 @@ define('zxl/zxlUi', function (require, exports, module) {
                 options.target = $this.closest('.layer').parent();
                 $this.on({
                     click: function () {
-                        layer.addAndOpen(options);
+                        layer.addAndOpen(options,$this);
                     }
                 });
             });
@@ -223,6 +223,9 @@ define('zxl/zxlUi', function (require, exports, module) {
                 $this.attr('pageBar-id', pageId);
                 grid.pageBar($this);
             });
+            $('.m-grid-head',$g).each(function(i,e){
+              grid.widthInit($(this));
+            });
             // editor编辑器组件
             //        console.info($('.m-editor'));
             $('.m-editor', $g).each(function () {
@@ -249,7 +252,7 @@ define('zxl/zxlUi', function (require, exports, module) {
                     }
                 });
             });
-            //    右键菜单 
+            //    右键菜单
             $('#unitContextMenu', $g).on({
                 mouseleave: function () {
                     $(this).hide();
@@ -259,12 +262,9 @@ define('zxl/zxlUi', function (require, exports, module) {
             $('#unit-close', $g).on({
                 click: function () {
                     var $unitContextMenu = $('#unitContextMenu');
-                    console.info($unitContextMenu.data());
+                    // console.info($unitContextMenu.data());
                     var data = $unitContextMenu.data();
-                    room.window.remove(data.id);
-                    room.taskBar.close(data.id);
-                    var $sleep = $('#taskBar .x-layout .x-unit-sleep:last');
-                    $sleep.click();
+                    room.close(data.id);
                     $unitContextMenu.hide();
                 }
             });
@@ -328,7 +328,14 @@ define('zxl/zxlUi', function (require, exports, module) {
                     });
                 }
             });
-
+            // 单选按钮组件
+            $('.m-radio',$g).each(function(i,e){
+              $(this).hide().radio();
+            });
+            // 多选按钮组件
+            $('.m-checkbox',$g).each(function(i,e){
+              $(this).hide().checkbox();
+            });
 
         }
     });

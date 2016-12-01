@@ -1,8 +1,8 @@
 <?php
 namespace app\admin\controller;
 use app\common\controller\AdminBase;
-use app\admin\model\Aaaaaa as AaaaaaM;
-class Aaaaaa extends AdminBase
+use app\admin\model\A_________ as A_________M;
+class A_________ extends AdminBase
 {
     public function index()
     {
@@ -15,10 +15,10 @@ class Aaaaaa extends AdminBase
 
     }
     public function read(){
-        $AaaaaaM=new AaaaaaM();
-        $aaaaaa=$AaaaaaM->all();
+        $A_________M=new A_________M();
+        $_________a=$A_________M->all();
 //        dump($menu);
-        return json($aaaaaa);
+        return json($_________);
     }
     public function delete(){
         echo 'delete';

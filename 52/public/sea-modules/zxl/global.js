@@ -1,7 +1,7 @@
 define('zxl/global', function (require, exports, module) {
     var $ = require('jquery');
     //    global模块
-    module.exports = {
+     var global= {
         name: 'global',
         sayName: function () {
             console.info(this.name);
@@ -15,7 +15,9 @@ define('zxl/global', function (require, exports, module) {
             this.$document = $(document);
             this.$body = $('body');
             this.$html = $('html');
-            
+
         }
     }
+    window.global=global;
+    module.exports=global;
 });

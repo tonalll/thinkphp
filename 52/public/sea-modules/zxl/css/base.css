@@ -231,9 +231,15 @@ l layout 布局
 
 
 .l-row,
-.l-row-padding {
+.l-row-padding,
+.l-row-auto {
     display: table;
-    width: 100%;
+}
+.l-row,.l-row-padding{
+  width: 100%;
+}
+.l-row-auto{
+  width: auto;
 }
 
 
@@ -935,7 +941,54 @@ m
     width: 100%;
     margin-left: 0
 }
-
+.m-radio{
+  cursor: pointer;
+  padding: 2px 0;
+  padding-left: 24px;
+  display: inline-block;
+}
+.m-radio:hover{
+  color: #00beee;
+}
+.m-radio-off{
+  background: url('../img/radio-off.png') -5px center no-repeat;
+}
+.m-radio-on{
+  background: url('../img/radio-on.png') -5px center no-repeat;
+}
+.m-radio:hover.m-radio-off{
+  background: url('../img/radio-off-hover.png') -5px center no-repeat;
+}
+.m-radio:hover.m-radio-on{
+  background: url('../img/radio-on-hover.png') -5px center no-repeat;
+}
+.m-checkbox{
+  cursor: pointer;
+  padding: 2px 0;
+  padding-left: 24px;
+  display: inline-block;
+}
+.m-checkbox:hover{
+  color: #00beee;
+}
+.m-checkbox-off{
+  background: url('../img/checkbox-off.png') -5px center no-repeat;
+}
+.m-checkbox-onoff{
+  background: url('../img/checkbox-onoff.png') -5px center no-repeat;
+}
+.m-checkbox-on{
+  background: url('../img/checkbox-on.png') -5px center no-repeat;
+}
+.m-checkbox:hover.m-checkbox-off{
+  background: url('../img/checkbox-off-hover.png') -5px center no-repeat;
+}
+.m-checkbox:hover.m-checkbox-onoff{
+  background: url('../img/checkbox-onoff-hover.png') -5px center no-repeat;
+}
+.m-checkbox:hover.m-checkbox-on{
+  background: url('../img/checkbox-on-hover.png') -5px center no-repeat;
+}
 
 /*ajax动画*/
 
@@ -1020,7 +1073,7 @@ m
 }
 
 
-/* 
+/*
 自由元素
 x
 x-unit

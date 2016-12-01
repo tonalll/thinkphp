@@ -1,11 +1,11 @@
 <?php
 namespace app\admin\controller;
 use app\common\controller\AdminBase;
-class Pageddiv extends AdminBase
+class FormUnit extends AdminBase
 {
     public function index()
     {
-        echo 'admin-Menu-index';
+        return view();
     }
     public function creat(){
 
@@ -14,7 +14,6 @@ class Pageddiv extends AdminBase
 
     }
     public function read(){
-      $this->fetch();
     }
     public function delete(){
         echo 'delete';

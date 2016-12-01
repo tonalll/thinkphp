@@ -231,9 +231,8 @@ body {
 }
 
 .m-gridBar {
-    margin: 0;
+    padding: 10px 0;
     border: none;
-    background: #eee;
     font-size: 0
 }
 

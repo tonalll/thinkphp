@@ -8,6 +8,7 @@ define('zxl/ajax', function (require, exports, module) {
             sayName: function () {
                 console.info(this.name);
             },
+            // form标签的ajax提交前后回调
             callback: {
                 beforeBack: function () {
                     return true;
@@ -79,7 +80,8 @@ define('zxl/ajax', function (require, exports, module) {
                 var _options = {
                     url: '',
                     message: '',
-                    beforeBack: function (_$this) {
+                    data:{},
+                    beforeBack: function (_options,_$this) {
                         //                        _$this当前点击的组件对象
                         return true;
                     },
@@ -89,15 +91,16 @@ define('zxl/ajax', function (require, exports, module) {
                 options = $.extend({}, _options, options);
                 if (options.message) msg.confirm(options.message, {
                     enter: function () {
-                        if (options.beforeBack(_$this)) ajax._ajax(options, _$this);
+                        if (options.beforeBack(options,_$this)) ajax._ajax(options, _$this);
                     },
                     mask: false
                 });
-                else ajax._ajax(options, _$this);
+                else if (options.beforeBack(options,_$this)) ajax._ajax(options, _$this);
             },
             _ajax: function (_options, _$this) {
                 $.ajax({
-                    url: _options.url
+                    url: _options.url,
+                    data:_options.data
                 }).done(function (_json) {
                     ajax.done(_json);
                     _options.afterBack(_json, _$this);

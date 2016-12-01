@@ -5,7 +5,8 @@ class PageDiv extends AdminBase
 {
     public function index()
     {
-        echo 'admin-Menu-index';
+        return view();
+        echo 'admin-Menu-index----';
     }
     public function creat(){
 

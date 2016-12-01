@@ -69,7 +69,61 @@ define('zxl/grid', function (require, exports, module) {
                     else msg.notice('已经是最后一页了！');
                 }
             });
-        }
+        },
+        widthInit:function(_$head){
+          // 设置gird头部宽度，body宽度
+          var $headTable = _$head;
+var $bodyTable = $headTable.nextAll().filter('.m-grid-body:first').find('table');
+//        猎取表头最后一行每个th的宽度放入数组
+var widthArr = [];
+var totalWidth = 0;
+var $lastTr = $('tr:last', $headTable);
+var isHidden = false;
+if ($lastTr.is(':hidden')) {
+    isHidden = true;
+    $lastTr.show();
+}
+if ($headTable.find('th[width]').length) {
+    $('tr:last th', $headTable).each(function(index, ement) {
+        var $this = $(this);
+        widthArr[index] = parseInt($this.attr('width'));
+        totalWidth += widthArr[index];
+    });
+} else {
+    $('tr:last th', $headTable).each(function(index, ement) {
+        var $this = $(this);
+        widthArr[index] = parseInt($this.width());
+        totalWidth += widthArr[index];
+    });
+}
+if (isHidden) $lastTr.find('th').css({
+    border: 'none',
+    background: 'none'
+});
+//        转换成百分比
+for (var tmpi = 0; tmpi < widthArr.length; tmpi++) {
+    widthArr[tmpi] = 100 * widthArr[tmpi] / totalWidth + '%';
+}
+//        设置表头最后一行每个th的宽度
+$('tr:last th', $headTable).each(function(index) {
+        var $this = $(this);
+        $this.attr({
+            width: widthArr[index]
+        });
+    })
+    //        设置表体第一行每个td的宽度
+$('tr:first td', $bodyTable).each(function(index) {
+    var $this = $(this);
+    $this.attr({
+        width: widthArr[index]
+    })
+});
+        },
+        getSelect:function(_$gridBody){
+          var $select;
+          $select=_$gridBody.find('td[select] :checked');
+          return $select;
+        },
 
     }
     module.exports = grid;

@@ -86,7 +86,7 @@
 
     /******** 实例方法拓展 ********/
 
-    //    距离页面边距 
+    //    距离页面边距
     $.fn.zMargin = function (_arr) {
             var $this = $(this);
             var offset = $this.offset();
@@ -342,7 +342,7 @@
 
     $.fn.insertAtCaret = function (myValue) {
         var $t = $(this)[0];
-        if (document.selection) { //ie 
+        if (document.selection) { //ie
             this.focus();
             var sel = document.selection.createRange();
             sel.text = myValue;
@@ -372,6 +372,61 @@
             this.value += myValue;
             this.focus();
         }
+    }
+    // 单选按钮组件
+    $.fn.radio=function(){
+      // 初始化
+      var $this=$(this);
+      var name=$this.attr('name');
+      var _context=$this.closest('.layer').length>0 ? $this.closest('.layer') : $('body');
+      var context=$this.attr('context') || _context;
+      $this.before('<span class="m-radio"></span>');
+      var $radio=$this.prev();
+      $radio.text($this.attr('title'));
+      if($this.is(':checked')) $radio.addClass('m-radio-on');
+      else $radio.addClass('m-radio-off');
+      if(!$radio.text()) $radio.height(18);
+      // 点击事件
+      $radio.on({
+        click:function(){
+          if($radio.hasClass('m-radio-on')){
+            $radio.removeClass('m-radio-on').addClass('m-radio-off');
+            $this.prop('checked',false);
+          }else {
+            // console.info($(':radio:checked[name='+name+']',context));
+            $(':radio:checked[name='+name+']',context).prop('checked',false).prev().removeClass('m-radio-on').addClass('m-radio-off');
+            $radio.removeClass('m-radio-off').addClass('m-radio-on');
+            $this.prop('checked',true).trigger('change').trigger('select').trigger('iClick');
+          }
+        }
+      });
+      return $this;
+    }
+
+    // 多选按钮组件
+    $.fn.checkbox=function(){
+      // 初始化
+      var $this=$(this);
+      $this.before('<span class="m-checkbox"></span>');
+      var $checkbox=$this.prev();
+      $checkbox.text($this.attr('title'));
+      if($this.is(':checked')) $checkbox.addClass('m-checkbox-on');
+      else $checkbox.addClass('m-checkbox-off');
+      if(!$checkbox.text()) $checkbox.height(18);
+      // 点击事件
+      $checkbox.on({
+        click:function(){
+          if($checkbox.hasClass('m-checkbox-on')){
+            $checkbox.removeClass('m-checkbox-on').addClass('m-checkbox-off');
+            $this.prop('checked',false);
+          }else {
+            // console.info($(':checkbox:checked[name='+name+']',context));
+            $checkbox.removeClass('m-checkbox-off').addClass('m-checkbox-on');
+            $this.prop('checked',true).trigger('change').trigger('select').trigger('iClick');
+          }
+        }
+      });
+      return $this;
     }
 
 }));
