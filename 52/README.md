@@ -1,13 +1,13 @@
 
 ## 数据库信息
-'type'           => 'mysql',
+'type'           => 'mysql',  
 // 服务器地址
-'hostname'       => '127.0.0.1',
+'hostname'       => '127.0.0.1',  
 // 数据库名
-'database'       => 'thinkphp52',
+'database'       => 'thinkphp52',  
 // 用户名
-'username'       => 'root',
+'username'       => 'root',  
 // 密码
-'password'       => '',
+'password'       => '',  
 // 端口
-'hostport'       => '3306',
+'hostport'       => '3306',  
