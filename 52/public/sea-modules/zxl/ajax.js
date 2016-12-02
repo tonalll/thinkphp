@@ -135,7 +135,7 @@ define('zxl/ajax', function (require, exports, module) {
 
             },
             on: function (_obj) {
-                console.info(_obj.done);
+                // console.info(_obj.done);
                 var obj = _obj || {};
                 if ($.isFunction(obj.done)) {
                     this.uid += 1;

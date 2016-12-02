@@ -407,7 +407,7 @@ function(a){var b=this,c=null,d=null,e=null;this.addListener("selectionchange",f
     /**
      * 配置项主体。注意，此处所有涉及到路径的配置别遗漏URL变量。
      */
-     console.info(URL);
+    //  console.info(URL);
     window.UMEDITOR_CONFIG = {
 
         //为编辑器实例添加一个路径，这个不能被注释
@@ -525,7 +525,7 @@ function(a){var b=this,c=null,d=null,e=null;this.addListener("selectionchange",f
         //填写过滤规则
         //,filterRules: {}
     };
-    
+
     /**
  * 中文语言包
  */
@@ -677,7 +677,7 @@ UM.I18N['zh-cn'] = {
     }
 };
 
-    
-    
+
+
 }
 ));

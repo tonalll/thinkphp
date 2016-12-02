@@ -4,7 +4,7 @@ define('zxl/ui', function (require, exports, module) {
     //    ui模块
     function ui(_$g) {
         var $g = _$g || document;
-        console.info('ui init',$g);
+        // console.info('ui init',$g);
         //        自定义ui事件
         userUi($g);
 

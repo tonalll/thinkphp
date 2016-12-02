@@ -51,7 +51,7 @@ define('zxl/layer', function (require, exports, module) {
                 $layer.show().siblings().hide();
                 return;
             }
-            console.info('打开或者刷新了');
+            // console.info('打开或者刷新了');
             var options = $layer.data();
             $.ajax({
                 url: options.url,
