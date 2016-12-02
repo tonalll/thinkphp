@@ -8,6 +8,7 @@ define('zxl/grid', function (require, exports, module) {
             console.info(this.name);
         },
         pageBar: function (_$pageBar) {
+            var $form=$('form[pageForm-id=' + _$pageBar.attr('pageBar-id') + ']');
             var pageNow = Number(_$pageBar.attr('page-now'));
             var pageButton = '<span class="m-button m-pageButton"></span>';
             var pageTotal = Number(_$pageBar.attr('page-total'));
@@ -19,7 +20,20 @@ define('zxl/grid', function (require, exports, module) {
             _$pageBar.html(html);
             var $prev = $('.m-pagePrev', _$pageBar);
             var $next = $('.m-pageNext', _$pageBar);
-            var $select;
+            var pageLength = Number(_$pageBar.attr('page-length'));
+            var $select=$('.m-select',_$pageBar);
+            var $pageSelect;
+
+            // 选择分页长度
+            $select.val(pageLength);
+            $form.data().pageLength=pageLength;
+            $form.data().pageNow=pageNow;
+            $select.on({
+              change:function(){
+                $form.data().pageLength=$select.val();
+                $form.submit();
+              }
+            });
             //            console.info(pageMax - pageMin);
             if (pageTotal <= 11) {
                 pageMin = 1;
@@ -51,21 +65,22 @@ define('zxl/grid', function (require, exports, module) {
                 //---------
                 $(this).on({
                     click: function () {
-                        $('form[pageForm-id=' + _$pageBar.attr('pageBar-id') + ']').submit();
+                        $form.data().pageNow=Number($(this).text());
+                        $form.submit();
                     }
                 });
             });
-            $select = $('.x-select', _$pageBar);
+            $pageSelect = $('.x-select', _$pageBar);
             //            点击上一页下一页
             $prev.on({
                 click: function () {
-                    if($select.prev().is('.m-pageButton')) $select.prev().click();
+                    if($pageSelect.prev().is('.m-pageButton')) $pageSelect.prev().click();
                     else msg.notice('已经是第一页了！');
                 }
             });
             $next.on({
                 click: function () {
-                    if($select.next().is('.m-pageButton')) $select.next().click();
+                    if($pageSelect.next().is('.m-pageButton')) $pageSelect.next().click();
                     else msg.notice('已经是最后一页了！');
                 }
             });
@@ -120,9 +135,9 @@ $('tr:first td', $bodyTable).each(function(index) {
 });
         },
         getSelect:function(_$gridBody){
-          var $select;
-          $select=_$gridBody.find('td[select] :checked');
-          return $select;
+          var $checked;
+          $checked=_$gridBody.find('td[select] :checked');
+          return $checked;
         },
 
     }

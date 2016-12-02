@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:56:"F:\wamp\www\tp\52/application/admin\view\menu\index.html";i:1480585009;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:56:"F:\wamp\www\tp\52/application/admin\view\menu\index.html";i:1480663636;}*/ ?>
 <div class="l-segment l-border-0 example-layout pageLayout">
     <form action="./menu/index.html" class="m-pageSubmit">
         <div class="l-row-padding">
@@ -27,9 +27,9 @@
         <div class="m-gridBar">
           <div class="l-row">
             <div class="l-col-1"><span class="m-button" layer='title:"菜单添加",url:"./menu/creat.html"' >添加</span></div>
-            <div class="l-col-1"><span class="m-button" layer='title:"查看菜单",url:"./menu/edit.html",beforeAdd:global.beforeAdd'>编辑</span></div>
-            <div class="l-col-1"><span class="m-button" layer='title:"查看菜单",url:"./menu/read.html",beforeAdd:global.beforeAdd'>查看</span></div>
-            <div class="l-col-1"><span class="m-button" m-ajax='message:"确定要删除吗！",url:"./menu/delete.html",beforeBack:global.beforeBack'>删除</span></div>
+            <div class="l-col-1"><span class="m-button" layer='title:"查看菜单",url:"./menu/edit.html",beforeAdd:global.beforeAdd_main_id'>编辑</span></div>
+            <div class="l-col-1"><span class="m-button" layer='title:"查看菜单",url:"./menu/read.html",beforeAdd:global.beforeAdd_main_id'>查看</span></div>
+            <div class="l-col-1"><span class="m-button" m-ajax='message:"确定要删除吗！",url:"./menu/delete.html",beforeBack:global.beforeBack_main_id'>删除</span></div>
           </div>
         </div>
         <div class="m-grid-head">
@@ -79,7 +79,7 @@ seajs.use(["zxl/grid","zxl/global","zxl/msg"], function (grid,global,msg) {
   // console.info('grid');
   // console.info('global');
   // 查看、编辑前回调
-  global.beforeAdd=function (_options,_$this){
+  global.beforeAdd_main_id=function (_options,_$this){
     var $select=grid.getSelect(_$this.closest('.m-gird').find('.m-grid-body'));
     // console.info(_options);
     // console.info(_$this);
@@ -92,7 +92,7 @@ return false;
   }
 }
 // 删除前回调
-global.beforeBack=function(_options,_$this){
+global.beforeBack_main_id=function(_options,_$this){
   var $select=grid.getSelect(_$this.closest('.m-gird').find('.m-grid-body'));
   if($select.length==0){
     msg.alert('请选择要删除的数据！');

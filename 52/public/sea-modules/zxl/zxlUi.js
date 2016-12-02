@@ -109,7 +109,7 @@ define('zxl/zxlUi', function (require, exports, module) {
                 $form.data({
                     callback: callback
                 });
-                console.info($form);
+                // console.info($form);
                 $form.on({
                     submit: function () {
                         if (validator && !validator.valid()) return false;

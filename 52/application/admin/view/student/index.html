@@ -1,5 +1,5 @@
 <div class="l-segment l-border-0 example-layout pageLayout">
-    <form action="./menu/index.html" class="m-pageSubmit">
+    <form action="./student/index.html" class="m-pageSubmit">
         <div class="l-row-padding">
             <div class="l-col-2 m-input">
                 <label for="">输入项</label>
@@ -25,26 +25,27 @@
     <div class="m-gird">
         <div class="m-gridBar">
           <div class="l-row">
-            <div class="l-col-1"><span class="m-button" layer='title:"菜单添加",url:"./menu/creat.html"' >添加</span></div>
-            <div class="l-col-1"><span class="m-button" layer='title:"查看菜单",url:"./menu/edit.html",beforeAdd:global.beforeAdd_main_id'>编辑</span></div>
-            <div class="l-col-1"><span class="m-button" layer='title:"查看菜单",url:"./menu/read.html",beforeAdd:global.beforeAdd_main_id'>查看</span></div>
-            <div class="l-col-1"><span class="m-button" m-ajax='message:"确定要删除吗！",url:"./menu/delete.html",beforeBack:global.beforeBack_main_id'>删除</span></div>
+            <div class="l-col-1"><span class="m-button" layer='title:"菜单添加",url:"./student/creat.html"' >添加</span></div>
+            <div class="l-col-1"><span class="m-button" layer='title:"查看菜单",url:"./student/edit.html",beforeAdd:global.beforeAdd_id'>编辑</span></div>
+            <div class="l-col-1"><span class="m-button" layer='title:"查看菜单",url:"./student/read.html",beforeAdd:global.beforeAdd_id'>查看</span></div>
+            <div class="l-col-1"><span class="m-button" m-ajax='message:"确定要删除吗！",url:"./student/delete.html",beforeBack:global.beforeBack_id'>删除</span></div>
           </div>
         </div>
         <div class="m-grid-head">
                       <table>
                 <thead>
                     <tr>
-                      <th width=4>编号</th>
+                      <th width=4>序列号</th>
+                      <th width=4>id</th>
+                      <th width=8>学号</th>
                       <th select="select" width=10>
                         <input class='m-checkbox' type="checkbox" name="checkbox1" value="checkbox1">
                       </th>
-                        <th width=10>id</th>
-                        <th width=10>自动刷新</th>
-                        <th width=10>标题</th>
-                        <th width=10>图标</th>
-                        <th width=10>url</th>
-                        <th width=10>固定</th>
+                        <th width=10>姓名</th>
+                        <th width=10>性别</th>
+                        <th width=10>家庭住址</th>
+                        <th width=10>身高</th>
+                        <th width=10>生日</th>
                     </tr>
                 </thead>
             </table>
@@ -52,25 +53,26 @@
         <div class="m-grid-body m-scrollbar">
             <table>
                 <tbody>
-                  {volist name="menu" id="menu_"}
-                  <tr data-id='{$menu_.main_id}'>
+                  {volist name="student" id="student_"}
+                  <tr data-id='{$student_.id}'>
                     <td>{$key+1}</td>
+                    <td>{$student_.id}</td>
+                    <td>{$student_.sno}</td>
                     <td select="select">
-                      <input class='m-checkbox' type="checkbox" name="main_id" value="{$menu_.main_id}">
+                      <input class='m-checkbox' type="checkbox" name="id" value="{$student_.id}">
                     </td>
-                    <td>{$menu_.id}</td>
-                    <td>{$menu_.autoRefresh}</td>
-                    <td>{$menu_.title}</td>
-                    <td>{$menu_.ico}</td>
-                    <td>{$menu_.url}</td>
-                    <td>{$menu_.fixed}</td>
+                    <td>{$student_.name}</td>
+                    <td>{$student_.sex}</td>
+                    <td>{$student_.address}</td>
+                    <td>{$student_.height}</td>
+                    <td>{$student_.birthday}</td>
                 </tr>
                   {/volist}
                 </tbody>
             </table>
         </div>
     </div>
-    <div class="m-pageBar" page-total=300 page-now=1 page-length=30 data-total=9000></div>
+    <div class="m-pageBar" page-total={$total.pageTotal} page-now={$total.pageNow} page-length={$total.pageLength} data-total={$total.dataTotal}></div>
 </div>
 <script type="text/javascript">
 
@@ -78,7 +80,7 @@ seajs.use(["zxl/grid","zxl/global","zxl/msg"], function (grid,global,msg) {
   // console.info('grid');
   // console.info('global');
   // 查看、编辑前回调
-  global.beforeAdd_main_id=function (_options,_$this){
+  global.beforeAdd_id=function (_options,_$this){
     var $select=grid.getSelect(_$this.closest('.m-gird').find('.m-grid-body'));
     // console.info(_options);
     // console.info(_$this);
@@ -86,22 +88,22 @@ if($select.length==0){
   msg.alert('请选择要查看的行！');
 return false;
 }else{
-  _options.data.main_id=$select.first().val();
+  _options.data.id=$select.first().val();
   return true;
   }
 }
 // 删除前回调
-global.beforeBack_main_id=function(_options,_$this){
+global.beforeBack_id=function(_options,_$this){
   var $select=grid.getSelect(_$this.closest('.m-gird').find('.m-grid-body'));
   if($select.length==0){
     msg.alert('请选择要删除的数据！');
   return false;
   }else{
-    var main_id=[];
+    var id=[];
     $select.each(function(i,e){
-      main_id+=$(this).val()+',';
+      id+=$(this).val()+',';
     });
-    _options.data.main_id=main_id;
+    _options.data.id=id;
     return true;
     }
 }

@@ -112,7 +112,7 @@ define('zxl/ajax', function (require, exports, module) {
                 if (!callback.beforeBack()) return;
                 $.ajax({
                     url: _$form.attr('action'),
-                    data: _$form.serialize(),
+                    data: _$form.serialize()+'&pageNow='+_$form.data().pageNow+'&pageLength='+_$form.data().pageLength,
                     dataType: 'html'
                 }).done(function (_html) {
                     $pageLayout.html(_html);
