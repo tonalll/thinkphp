@@ -1,12 +1,10 @@
 <?php
 namespace app\admin\controller;
 use app\common\controller\AdminBase;
-class Bbbbbbb extends AdminBase
+class Layout extends AdminBase
 {
     public function index()
     {
-        $bbbbbbb=db('bbbbbbb')->select();
-        $this->assign('bbbbbbb',$bbbbbbb);
         return view('index');
     }
     public function creat(){
@@ -14,12 +12,12 @@ class Bbbbbbb extends AdminBase
     }
     public function save(){
         $data=input('param.');
-        $result=db('bbbbbbb')->insert($data);
+        $result=db('layout')->insert($data);
 //        dump($result);
         if($result){
             $json['message']="保存成功！";
             $json['closeLayer']="currentLayer";
-            $json['refreshLayer']="bbbbbbb";
+            $json['refreshLayer']="layout";
         }else{
             $json['message']="保存失败！";
         }
@@ -30,8 +28,8 @@ class Bbbbbbb extends AdminBase
         if(!$id){
             zxlErr('id未定义！');
         }
-        $bbbbbbb=db('bbbbbbb')->where('id',$id)->find();
-        $this->assign('bbbbbbb',$bbbbbbb);
+        $layout=db('layout')->where('id',$id)->find();
+        $this->assign('layout',$layout);
         return view();
     }
 
@@ -40,18 +38,18 @@ class Bbbbbbb extends AdminBase
         if(!$id){
             zxlErr('id未定义！');
         }
-        $bbbbbbb=db('bbbbbbb')->where('id',$id)->find();
-        $this->assign('bbbbbbb',$bbbbbbb);
+        $layout=db('layout')->where('id',$id)->find();
+        $this->assign('layout',$layout);
         return view();
     }
     public function update(){
         $data=input('param.');
-        $result=db('bbbbbbb')->update($data,['id' => $data['id']]);
+        $result=db('layout')->update($data,['id' => $data['id']]);
 //        dump($result);
         if($result){
             $json['message']="修改成功！";
             $json['closeLayer']="currentLayer";
-            $json['refreshLayer']="bbbbbbb";
+            $json['refreshLayer']="layout";
         }else{
             $json['message']="修改失败！";
         }
@@ -62,10 +60,10 @@ class Bbbbbbb extends AdminBase
         if(!$id){
             zxlErr('请选择要删除的项！');
         }
-        $result=db('bbbbbbb')->where('id',$id)->delete();
+        $result=db('layout')->where('id',$id)->delete();
         if($result){
             $json['message']="删除成功！";
-            $json['refreshLayer']="bbbbbbb";
+            $json['refreshLayer']="layout";
         }else{
             $json['message']="删除失败！";
         }

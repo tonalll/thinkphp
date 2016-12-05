@@ -22,6 +22,7 @@ define('zxl/grid', function (require, exports, module) {
             var $next = $('.m-pageNext', _$pageBar);
             var pageLength = Number(_$pageBar.attr('page-length'));
             var $select=$('.m-select',_$pageBar);
+            var $go=$('.m-pageGo',_$pageBar);
             var $pageSelect;
 
             // 选择分页长度
@@ -69,6 +70,17 @@ define('zxl/grid', function (require, exports, module) {
                         $form.submit();
                     }
                 });
+            });
+            // 输入自定义跳转页
+            $go.on({
+                click:function(){
+                    var pageGoInput=$('.m-pageGoInput',_$pageBar).val();
+                    pageGoInput=Number(pageGoInput);
+                    if(pageGoInput){
+                        $form.data().pageNow=pageGoInput;
+                        $form.submit();   
+                    }
+                }
             });
             $pageSelect = $('.x-select', _$pageBar);
             //            点击上一页下一页
