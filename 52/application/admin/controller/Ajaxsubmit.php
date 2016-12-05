@@ -7,4 +7,10 @@ class Ajaxsubmit extends AdminBase
     {
         return view('index');
     }
+    public function save(){
+            $json['message']="保存成功,这里是后台返回的提示信息！";
+//            $json['closeLayer']="currentLayer";
+//            $json['refreshLayer']="bbbbbbb";
+        return json($json);
+    }
 }

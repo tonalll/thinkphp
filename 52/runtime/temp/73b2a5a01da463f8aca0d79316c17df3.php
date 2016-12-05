@@ -1,6 +1,6 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:60:"F:\wamp\www\tp\52/application/admin\view\validate\index.html";i:1470643118;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:60:"F:\wamp\www\tp\52/application/admin\view\validate\index.html";i:1480909199;}*/ ?>
 <div class="l-segment l-border-0 example-layout pageLayout">
-    <form action="./sea-modules/zxl/ajax/ajaxSubmit.json" class="m-ajaxSubmit" callback='afterBack:afterBackTest'>
+    <form action="./validate/save.html" class="m-ajaxSubmit" callback='afterBack:afterBackTest'>
         <div class="l-row-padding">
             <div class="l-col-2 m-input">
                 <label for="">输入项--</label>

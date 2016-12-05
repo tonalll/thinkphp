@@ -1,18 +1,17 @@
 <div class="l-segment l-border-0 example-layout pageLayout">
-    <form action="./sea-modules/zxl/ajax/pageDivAction.html" class="m-pageSubmit">
+    <form action="./page_div/index.html" class="m-pageSubmit">
 
 
     </form>
     <div class="l-row x-pageDiv">
-        <div class="l-col-1 l-ml-1">2</div>
-        <div class="l-col-1 l-ml-1">2</div>
-        <div class="l-col-1 l-ml-1">2</div>
-        <div class="l-col-1 l-ml-1">2</div>
-        <div class="l-col-1 l-ml-1">2</div>
-        <div class="l-col-1 l-ml-1">2</div>
+        <div class="l-col-1 l-ml-1">{$total.pageNow}--{$total.pageNow}--{$total.pageNow}</div>
+        <div class="l-col-1 l-ml-1">{$total.pageNow}--{$total.pageNow}--{$total.pageNow}</div>
+        <div class="l-col-1 l-ml-1">{$total.pageNow}--{$total.pageNow}--{$total.pageNow}</div>
+        <div class="l-col-1 l-ml-1">{$total.pageNow}--{$total.pageNow}--{$total.pageNow}</div>
+        <div class="l-col-1 l-ml-1">{$total.pageNow}--{$total.pageNow}--{$total.pageNow}</div>
+        <div class="l-col-1 l-ml-1">{$total.pageNow}--{$total.pageNow}--{$total.pageNow}</div>
     </div>
-
-    <div class="m-pageBar" page-total=300 page-now=1 page-length=30 data-total=9000></div>
+    <div class="m-pageBar" page-total={$total.pageTotal} page-now={$total.pageNow} page-length={$total.pageLength} data-total={$total.dataTotal}></div>
 </div>
 
 
