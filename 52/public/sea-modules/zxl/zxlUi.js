@@ -131,6 +131,7 @@ define('zxl/zxlUi', function (require, exports, module) {
             $('[upload]', $g).each(function () {
                 var $thisUpload = $(this);
                 var _options = {
+                    fileVal:'file',//文件上传域的name
                     auto: true,
                     swf: index.options.swf,
                     pick: {

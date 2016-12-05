@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:58:"F:\wamp\www\tp\52/application/admin\view\upload\index.html";i:1470642866;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:58:"F:\wamp\www\tp\52/application/admin\view\upload\index.html";i:1480922166;}*/ ?>
 <div class="l-segment l-border-0 example-layout">
     <div class="l-row-padding">
         <div class="l-col-2 m-input">
@@ -27,7 +27,7 @@
         </div>
     </div>
     <div class="l-segment l-border-0">
-        <div upload='server:"./sea-modules/zxl/ajax/upload.json",eventsBack:uoloadEventsBack'>上传</div>
+        <div upload='server:"./upload/upload.html",eventsBack:uoloadEventsBack'>上传</div>
     </div>
 
 
@@ -52,6 +52,7 @@
             console.info(data);
             seajs.use('msg', function () {
                 msg.notice(data.message);
+                console.info(data.getSaveName);
             });
             //当文件上传成功时触发
             // File对象
