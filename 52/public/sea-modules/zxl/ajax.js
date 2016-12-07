@@ -51,14 +51,15 @@ define('zxl/ajax', function (require, exports, module) {
                     ajaxSuccess: function () {},
                     ajaxError: function (event, xhr, ajaxOptions, thrownError) {
                         $('#m-ajax-mask').hide();
-                        //                console.info(event);
-                        //                console.info(xhr);
-                        //                console.info(ajaxOptions);
-                        //                console.info(thrownError);
+                                        console.info('event-----',event);
+                                        console.info('xhr-----',xhr);
+                                        console.info('ajaxOptions-----',ajaxOptions);
+                                        console.info('thrownError-----',thrownError);
                         // index.alert("<div>Http status: " + xhr.status + " " + xhr.statusText + "</div>" + "<div>ajaxOptions: " + ajaxOptions + "</div>" + "<div>thrownError: " + thrownError + "</div>" + "<div>" + xhr.responseText + "</div>");
                         //                    global.isTimeout(xhr.responseText);
                         //                    index.alert("<div>" + xhr.responseText + "</div>");
-                        msg.alert(xhr.responseText, true);
+//                        msg.alert(xhr.responseText, true);
+                        msg.alert($.zJSON(xhr.responseText).message, true);
 
                     }
                 });
