@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2016-12-02 18:06:33
+Date: 2016-12-08 14:24:15
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -27,7 +27,7 @@ CREATE TABLE `think_menu` (
   `url` char(255) NOT NULL,
   `fixed` char(255) DEFAULT 'true',
   PRIMARY KEY (`main_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of think_menu
@@ -35,12 +35,15 @@ CREATE TABLE `think_menu` (
 INSERT INTO `think_menu` VALUES ('4', 'menu', 'false', '菜单管理', 'x-ico-default', './menu/index.html', 'true');
 INSERT INTO `think_menu` VALUES ('9', 'FormUnit', 'false', '表单组件', 'x-ico-default', './form_unit/index.html', 'true');
 INSERT INTO `think_menu` VALUES ('13', 'student', 'false', '学生信息', 'x-ico-default', './student/index.html', 'true');
-INSERT INTO `think_menu` VALUES ('15', 'FormUnit', 'false', '表单组件', 'x-ico-default', './form_unit/index.html', 'true');
-INSERT INTO `think_menu` VALUES ('17', 'FormUnit', 'false', '表单组件', 'x-ico-default', './form_unit/index.html', 'true');
-INSERT INTO `think_menu` VALUES ('18', 'FormUnit', 'false', '表单组件', 'x-ico-default', './form_unit/index.html', 'true');
-INSERT INTO `think_menu` VALUES ('19', 'FormUnit', 'false', '表单组件', 'x-ico-default', './form_unit/index.html', 'true');
-INSERT INTO `think_menu` VALUES ('20', 'FormUnit', 'false', '表单组件', 'x-ico-default', './form_unit/index.html', 'true');
-INSERT INTO `think_menu` VALUES ('21', 'FormUnit', 'false', '表单组件', 'x-ico-default', './form_unit/index.html', 'true');
+INSERT INTO `think_menu` VALUES ('15', 'Ajaxsubmit', 'false', 'ajax提交', 'x-ico-default', './ajaxsubmit/index.html', 'true');
+INSERT INTO `think_menu` VALUES ('17', 'Button', 'false', '按钮组件', 'x-ico-default', './button/index.html', 'true');
+INSERT INTO `think_menu` VALUES ('18', 'Editor', 'false', '文本编辑器组件', 'x-ico-default', './editor/index.html', 'true');
+INSERT INTO `think_menu` VALUES ('19', 'Form', 'false', '表单布局', 'x-ico-default', './form/index.html', 'true');
+INSERT INTO `think_menu` VALUES ('20', 'Layer', 'false', '层组件', 'x-ico-default', './layer/index.html', 'true');
+INSERT INTO `think_menu` VALUES ('21', 'Layout', 'false', '布局', 'x-ico-default', './layout/index.html', 'true');
+INSERT INTO `think_menu` VALUES ('22', 'PageDiv', 'false', '其它分页', 'x-ico-default', './page_div/index.html', 'true');
+INSERT INTO `think_menu` VALUES ('23', 'Upload', 'false', '上传示例', 'x-ico-default', './upload/index.html', 'true');
+INSERT INTO `think_menu` VALUES ('24', 'Validate', 'false', '验证示例', 'x-ico-default', './validate/index.html', 'true');
 
 -- ----------------------------
 -- Table structure for `think_student`
