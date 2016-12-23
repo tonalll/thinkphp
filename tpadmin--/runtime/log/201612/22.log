@@ -1,0 +1,174 @@
+[ 2016-12-22T10:41:06+08:00 ] ::1 ::1 GET /tp/tpadmin/public/admin/index/index.html
+[ log ] localhost/tp/tpadmin/public/admin/index/index.html [运行时间：0.550749s][吞吐率：1.82req/s] [内存消耗：7,023.93kb] [文件加载：72]
+[ info ] [ LANG ] F:\wamp\www\tp\tpadmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://localhost/tp/tpadmin/public/admin/pub/login.html',
+  'cookie' => 'thinkphp_show_page_trace=0|0; followMe=true; taskBar=taskBar; CNZZDATA1257798523=102136712-1464769838-http%253A%252F%252Flocalhost%253A8072%252F%7C1479972776; pgv_pvi=2671648768; __utma=111872281.177614974.1478831499.1479105797.1479719189.3; __utmz=111872281.1478831499.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); pgv_si=s7129986048; PHPSESSID=bmqibr5dguqiep7fr38sr5nns5',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.069984s ]
+[ info ] [ RUN ] app\admin\controller\Index->index[ F:\wamp\www\tp\tpadmin\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\wamp\www\tp\tpadmin\public/../application/admin\view\index\index.html [ array (
+  0 => 'groups',
+  1 => 'menu',
+) ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ F:\wamp\www\tp\tpadmin\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ F:\wamp\www\tp\tpadmin\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ F:\wamp\www\tp\tpadmin\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ F:\wamp\www\tp\tpadmin\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ F:\wamp\www\tp\tpadmin\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ F:\wamp\www\tp\tpadmin\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ F:\wamp\www\tp\tpadmin\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ F:\wamp\www\tp\tpadmin\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ F:\wamp\www\tp\tpadmin\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ F:\wamp\www\tp\tpadmin\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ F:\wamp\www\tp\tpadmin\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ F:\wamp\www\tp\tpadmin\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ F:\wamp\www\tp\tpadmin\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ F:\wamp\www\tp\tpadmin\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ F:\wamp\www\tp\tpadmin\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ F:\wamp\www\tp\tpadmin\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ F:\wamp\www\tp\tpadmin\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ F:\wamp\www\tp\tpadmin\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ F:\wamp\www\tp\tpadmin\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ F:\wamp\www\tp\tpadmin\application\admin\widget\Index.php ]
+[ info ] [ RUN ] app\admin\widget\Index->menu[ F:\wamp\www\tp\tpadmin\application\admin\widget\Index.php ]
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.007322s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.035664s ] mysql:dbname=tpadmin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_admin_node` [ RunTime:0.006118s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`name`,`group_id`,`title`,`type` FROM `tp_admin_node` WHERE  (  status=1 AND group_id > 0 ) [ RunTime:0.000805s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_admin_group` [ RunTime:0.004416s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`icon` FROM `tp_admin_group` WHERE  `id` IN (1,2)  AND `status` = 1 ORDER BY sort asc,id asc [ RunTime:0.000569s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.004937s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '0.0.0.0' , '保留地址 保留地址  ' , 'Windows 10' , 'Firefox(50.0)' , 'http://localhost/tp/tpadmin/public/admin/index/index.html' , 'admin' , 'Index' , 'index' , 'GET' , 'a:0:{}' , 1482374466) [ RunTime:0.000478s ]
+
+---------------------------------------------------------------
+[ 2016-12-22T10:41:07+08:00 ] ::1 ::1 GET /tp/tpadmin/public/admin/index/welcome.html
+[ log ] localhost/tp/tpadmin/public/admin/index/welcome.html [运行时间：0.109632s][吞吐率：9.12req/s] [内存消耗：6,929.65kb] [文件加载：70]
+[ info ] [ LANG ] F:\wamp\www\tp\tpadmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://localhost/tp/tpadmin/public/admin/index/index.html',
+  'cookie' => 'thinkphp_show_page_trace=0|0; followMe=true; taskBar=taskBar; CNZZDATA1257798523=102136712-1464769838-http%253A%252F%252Flocalhost%253A8072%252F%7C1479972776; pgv_pvi=2671648768; __utma=111872281.177614974.1478831499.1479105797.1479719189.3; __utmz=111872281.1478831499.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); pgv_si=s7129986048; PHPSESSID=bmqibr5dguqiep7fr38sr5nns5',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.005917s ]
+[ info ] [ RUN ] app\admin\controller\Index->welcome[ F:\wamp\www\tp\tpadmin\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\wamp\www\tp\tpadmin\public/../application/admin\view\index\welcome.html [ array (
+  0 => 'last_login_ip',
+  1 => 'last_login_loc',
+  2 => 'current_login_ip',
+  3 => 'current_login_loc',
+  4 => 'info',
+) ]
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.006802s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005714s ] mysql:dbname=tpadmin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_admin_user` [ RunTime:0.015224s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000472s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.004450s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '0.0.0.0' , '保留地址 保留地址  ' , 'Windows 10' , 'Firefox(50.0)' , 'http://localhost/tp/tpadmin/public/admin/index/welcome.html' , 'admin' , 'Index' , 'welcome' , 'GET' , 'a:0:{}' , 1482374467) [ RunTime:0.000568s ]
+
+---------------------------------------------------------------
+[ 2016-12-22T10:41:25+08:00 ] ::1 ::1 GET /tp/tpadmin/public/admin/admin_role/index.html
+[ log ] localhost/tp/tpadmin/public/admin/admin_role/index.html [运行时间：0.161313s][吞吐率：6.20req/s] [内存消耗：7,634.97kb] [文件加载：77]
+[ info ] [ LANG ] F:\wamp\www\tp\tpadmin\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'admin_role',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://localhost/tp/tpadmin/public/admin/index/index.html',
+  'cookie' => 'thinkphp_show_page_trace=0|0; followMe=true; taskBar=taskBar; CNZZDATA1257798523=102136712-1464769838-http%253A%252F%252Flocalhost%253A8072%252F%7C1479972776; pgv_pvi=2671648768; __utma=111872281.177614974.1478831499.1479105797.1479719189.3; __utmz=111872281.1478831499.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); pgv_si=s7129986048; PHPSESSID=bmqibr5dguqiep7fr38sr5nns5',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.006084s ]
+[ info ] [ RUN ] app\admin\controller\AdminRole->index[ F:\wamp\www\tp\tpadmin\application\admin\traits\controller\Controller.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] F:\wamp\www\tp\tpadmin\public/../application/admin\view\admin_role\index.html [ array (
+  0 => 'list',
+  1 => 'count',
+  2 => 'page',
+  3 => 'numPerPage',
+) ]
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.006615s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000796s ] mysql:dbname=tpadmin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_admin_role` [ RunTime:0.005585s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_admin_role` WHERE  `isdelete` = 0 LIMIT 1 [ RunTime:0.000423s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_admin_role` WHERE  `isdelete` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.000365s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.004257s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '0.0.0.0' , '保留地址 保留地址  ' , 'Windows 10' , 'Firefox(50.0)' , 'http://localhost/tp/tpadmin/public/admin/admin_role/index.html' , 'admin' , 'AdminRole' , 'index' , 'GET' , 'a:0:{}' , 1482374485) [ RunTime:0.000506s ]
+
+---------------------------------------------------------------
